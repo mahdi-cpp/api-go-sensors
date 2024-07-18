@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/mahdi-cpp/api-go-sensors/api"
 )
 
 var (
@@ -21,7 +22,7 @@ func Run() {
 // so this one won't be so messy
 func getRoutes() {
 	v1 := router.Group("/v1")
-	api.Add(v1)
+	api.AddSensorRoutes(v1)
 }
 
 func CORSMiddleware() gin.HandlerFunc {
